@@ -1,6 +1,3 @@
 namespace DDD.Application.Common;
-
-public class ICommand
-{
-    
-}
+public interface ICommand { }
+public interface ICommand<out TResponse> { }

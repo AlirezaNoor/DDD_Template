@@ -1,6 +1,3 @@
 namespace DDD.Application.Common;
 
-public class IQuery
-{
-    
-}
+public interface IQuery<out TResponse> { }

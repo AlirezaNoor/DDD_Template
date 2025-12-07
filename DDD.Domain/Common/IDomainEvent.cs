@@ -1,6 +1,6 @@
 namespace DDD.Domain.Common;
 
-public class IDomainEvent
+public interface IDomainEvent
 {
-    
+    DateTime OccurredOn { get; }
 }

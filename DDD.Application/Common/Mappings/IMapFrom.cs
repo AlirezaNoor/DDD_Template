@@ -1,6 +1,8 @@
+using AutoMapper;
+
 namespace DDD.Application.Common.Mappings;
 
-public class IMapFrom
+public interface IMapFrom<T>
 {
-    
+    void Mapping(Profile profile) => profile.CreateMap(typeof(T), GetType());
 }
