@@ -1,0 +1,31 @@
+services:
+  ddd.api:
+    image: ${DOCKER_REGISTRY-}dddapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:8080"
+      - "5001:8081"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=db;Database=DDDTemplateDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True;
+      - JwtSettings__Secret=super-secret-key-that-should-be-stored-in-secure-storage-at-least-32-chars-long
+      - JwtSettings__Issuer=DDD-Template
+      - JwtSettings__Audience=DDD-Template
+      - JwtSettings__ExpiryMinutes=60
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: Your_password123
+      POSTGRES_DB: DDDTemplateDb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

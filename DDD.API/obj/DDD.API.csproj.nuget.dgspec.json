@@ -20,13 +20,20 @@
           "net9.0"
         ],
         "sources": {
-          "/home/aliz/.dotnet/library-packs": {},
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/home/aliz/DDD_Template/DDD.Application/DDD.Application.csproj": {
+                "projectPath": "/home/aliz/DDD_Template/DDD.Application/DDD.Application.csproj"
+              },
+              "/home/aliz/DDD_Template/DDD.Infrastructure/DDD.Infrastructure.csproj": {
+                "projectPath": "/home/aliz/DDD_Template/DDD.Infrastructure/DDD.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -37,7 +44,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -48,6 +55,22 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
             }
           },
           "imports": [
@@ -69,7 +92,245 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/aliz/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/aliz/DDD_Template/DDD.Application/DDD.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/aliz/DDD_Template/DDD.Application/DDD.Application.csproj",
+        "projectName": "DDD.Application",
+        "projectPath": "/home/aliz/DDD_Template/DDD.Application/DDD.Application.csproj",
+        "packagesPath": "/home/aliz/.nuget/packages/",
+        "outputPath": "/home/aliz/DDD_Template/DDD.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/aliz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/aliz/DDD_Template/DDD.Domain/DDD.Domain.csproj": {
+                "projectPath": "/home/aliz/DDD_Template/DDD.Domain/DDD.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[16.0.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/aliz/DDD_Template/DDD.Domain/DDD.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/aliz/DDD_Template/DDD.Domain/DDD.Domain.csproj",
+        "projectName": "DDD.Domain",
+        "projectPath": "/home/aliz/DDD_Template/DDD.Domain/DDD.Domain.csproj",
+        "packagesPath": "/home/aliz/.nuget/packages/",
+        "outputPath": "/home/aliz/DDD_Template/DDD.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/aliz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/aliz/DDD_Template/DDD.Infrastructure/DDD.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/aliz/DDD_Template/DDD.Infrastructure/DDD.Infrastructure.csproj",
+        "projectName": "DDD.Infrastructure",
+        "projectPath": "/home/aliz/DDD_Template/DDD.Infrastructure/DDD.Infrastructure.csproj",
+        "packagesPath": "/home/aliz/.nuget/packages/",
+        "outputPath": "/home/aliz/DDD_Template/DDD.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/aliz/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/home/aliz/DDD_Template/DDD.Application/DDD.Application.csproj": {
+                "projectPath": "/home/aliz/DDD_Template/DDD.Application/DDD.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.11, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.15.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

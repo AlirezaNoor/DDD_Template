@@ -20,7 +20,7 @@
           "net9.0"
         ],
         "sources": {
-          "/home/aliz/.dotnet/library-packs": {},
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -41,7 +41,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -56,6 +56,10 @@
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
               "version": "[12.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Logging": {
               "target": "Package",
@@ -78,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/aliz/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -98,7 +102,7 @@
           "net9.0"
         ],
         "sources": {
-          "/home/aliz/.dotnet/library-packs": {},
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -115,13 +119,19 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -138,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/aliz/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

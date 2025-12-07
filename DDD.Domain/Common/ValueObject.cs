@@ -1,6 +1,6 @@
 namespace DDD.Domain.Common;
 
-public abstract class ValueObject
+public abstract class ValueObject : IEquatable<ValueObject>
 {
     protected abstract IEnumerable<object> GetEqualityComponents();
 
@@ -13,6 +13,11 @@ public abstract class ValueObject
         return GetEqualityComponents().SequenceEqual(other.GetEqualityComponents());
     }
 
+    public bool Equals(ValueObject? other)
+    {
+        return Equals((object?)other);
+    }
+
     public override int GetHashCode()
     {
         return GetEqualityComponents()
@@ -22,8 +27,10 @@ public abstract class ValueObject
 
     public static bool operator ==(ValueObject? left, ValueObject? right)
     {
-        if (left is null && right is null) return true;
-        if (left is null || right is null) return false;
+        if (ReferenceEquals(left, null) && ReferenceEquals(right, null))
+            return true;
+        if (ReferenceEquals(left, null) || ReferenceEquals(right, null))
+            return false;
         return left.Equals(right);
     }
 

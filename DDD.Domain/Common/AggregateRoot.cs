@@ -1,7 +1,8 @@
 namespace DDD.Domain.Common;
 
-public abstract class AggregateRoot : BaseEntity
+public abstract class AggregateRoot<TId> : BaseEntity<TId>, IAggregateRoot where TId : struct, IStronglyTypedId
 {
+    protected AggregateRoot(TId id) : base(id) { }
     private readonly List<IDomainEvent> _domainEvents = new();
     public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
 

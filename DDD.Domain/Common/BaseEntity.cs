@@ -1,15 +1,15 @@
 namespace DDD.Domain.Common;
 
-public abstract class BaseEntity
+public abstract class BaseEntity<TId> : IBaseEntity where TId : struct, IStronglyTypedId
 {
-    public Guid Id { get; protected set; }
+    public TId Id { get; protected set; }
     public DateTime CreatedAt { get; protected set; }
     public DateTime? UpdatedAt { get; protected set; }
     public bool IsDeleted { get; protected set; }
 
-    protected BaseEntity()
+    protected BaseEntity(TId id)
     {
-        Id = Guid.NewGuid();
+        Id = id;
         CreatedAt = DateTime.UtcNow;
         IsDeleted = false;
     }

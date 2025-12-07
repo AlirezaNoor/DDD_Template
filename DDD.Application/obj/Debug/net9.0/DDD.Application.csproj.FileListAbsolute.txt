@@ -1,0 +1,16 @@
+/home/aliz/DDD_Template/DDD.Application/bin/Debug/net9.0/DDD.Application.deps.json
+/home/aliz/DDD_Template/DDD.Application/bin/Debug/net9.0/DDD.Application.dll
+/home/aliz/DDD_Template/DDD.Application/bin/Debug/net9.0/DDD.Application.pdb
+/home/aliz/DDD_Template/DDD.Application/bin/Debug/net9.0/DDD.Domain.dll
+/home/aliz/DDD_Template/DDD.Application/bin/Debug/net9.0/DDD.Domain.pdb
+/home/aliz/DDD_Template/DDD.Application/obj/Debug/net9.0/DDD.Application.csproj.AssemblyReference.cache
+/home/aliz/DDD_Template/DDD.Application/obj/Debug/net9.0/DDD.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/aliz/DDD_Template/DDD.Application/obj/Debug/net9.0/DDD.Application.AssemblyInfoInputs.cache
+/home/aliz/DDD_Template/DDD.Application/obj/Debug/net9.0/DDD.Application.AssemblyInfo.cs
+/home/aliz/DDD_Template/DDD.Application/obj/Debug/net9.0/DDD.Application.csproj.CoreCompileInputs.cache
+/home/aliz/DDD_Template/DDD.Application/obj/Debug/net9.0/DDD.Application.sourcelink.json
+/home/aliz/DDD_Template/DDD.Application/obj/Debug/net9.0/DDD.Appl.D68E3365.Up2Date
+/home/aliz/DDD_Template/DDD.Application/obj/Debug/net9.0/DDD.Application.dll
+/home/aliz/DDD_Template/DDD.Application/obj/Debug/net9.0/refint/DDD.Application.dll
+/home/aliz/DDD_Template/DDD.Application/obj/Debug/net9.0/DDD.Application.pdb
+/home/aliz/DDD_Template/DDD.Application/obj/Debug/net9.0/ref/DDD.Application.dll
