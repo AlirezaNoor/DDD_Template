@@ -1,0 +1,225 @@
+
+# YourProject – Domain-Driven Design (DDD) Template for .NET
+
+A clean, production-ready **Domain-Driven Design (DDD) template** for building scalable and maintainable .NET applications.  
+This project provides a clear separation of concerns across **Domain**, **Application**, **Infrastructure**, and **API** layers, following proven software architecture principles such as:
+
+- Domain-Driven Design  
+- Clean Architecture  
+- CQRS  
+- SOLID principles  
+- Vertical feature slicing  
+- Testability by design  
+
+This template is intended as a **starting point** for real-world enterprise applications.  
+If you're searching for a “DDD .NET Template” or “Clean Architecture starter project”, this repository is exactly for you.
+
+---
+
+## 🚀 Features
+
+- Fully structured Domain layer with Value Objects, Entities, Aggregates & Domain Events  
+- Clean Application layer with CQRS (Commands, Queries), Behaviors & Exception models  
+- Infrastructure layer using EF Core with Repositories, Unit of Work & Configurations  
+- API layer with clean controllers, middlewares & global exception handling  
+- Integrated Domain Event Dispatcher  
+- Preconfigured architecture for easy extension  
+- Unit test projects for each layer  
+
+---
+
+## 📂 Project Directory Structure
+
+```
+YourProject/
+│
+├── src/
+│   ├── YourProject.Domain/
+│   │   ├── Common/
+│   │   │   ├── BaseEntity.cs
+│   │   │   ├── AggregateRoot.cs
+│   │   │   ├── ValueObject.cs
+│   │   │   ├── IDomainEvent.cs
+│   │   │   └── Result.cs
+│   │   ├── Entities/
+│   │   │   └── [Your Entities Here]
+│   │   ├── ValueObjects/
+│   │   │   └── [Your Value Objects Here]
+│   │   ├── Interfaces/
+│   │   │   ├── IRepository.cs
+│   │   │   └── IUnitOfWork.cs
+│   │   ├── Events/
+│   │   │   └── [Your Domain Events Here]
+│   │   └── Exceptions/
+│   │       ├── DomainException.cs
+│   │       └── BusinessRuleValidationException.cs
+│   │
+│   ├── YourProject.Application/
+│   │   ├── Common/
+│   │   │   ├── ICommand.cs
+│   │   │   ├── ICommandHandler.cs
+│   │   │   ├── IQuery.cs
+│   │   │   ├── IQueryHandler.cs
+│   │   │   ├── IDomainEventHandler.cs
+│   │   │   ├── Behaviors/
+│   │   │   │   ├── ValidationBehavior.cs
+│   │   │   │   └── LoggingBehavior.cs
+│   │   │   ├── Mappings/
+│   │   │   │   └── IMapFrom.cs
+│   │   │   └── Exceptions/
+│   │   │       ├── ValidationException.cs
+│   │   │       └── NotFoundException.cs
+│   │   ├── Features/
+│   │   │   └── [Your Use Cases Here]/
+│   │   │       ├── Commands/
+│   │   │       ├── Queries/
+│   │   │       └── DTOs/
+│   │   └── Services/
+│   │       └── [Your Application Services Here]
+│   │
+│   ├── YourProject.Infrastructure/
+│   │   ├── Persistence/
+│   │   │   ├── ApplicationDbContext.cs
+│   │   │   ├── Repository.cs
+│   │   │   └── Configurations/
+│   │   │       └── [Your Entity Configurations Here]
+│   │   ├── Services/
+│   │   │   ├── DomainEventDispatcher.cs
+│   │   │   └── DateTimeService.cs
+│   │   └── Migrations/
+│   │       └── [EF Core Migrations]
+│   │
+│   └── YourProject.API/
+│       ├── Controllers/
+│       │   └── BaseApiController.cs
+│       ├── Middleware/
+│       │   └── ExceptionHandlingMiddleware.cs
+│       ├── Filters/
+│       │   └── ApiExceptionFilterAttribute.cs
+│       ├── Program.cs
+│       └── appsettings.json
+│
+└── tests/
+    ├── YourProject.Domain.Tests/
+    ├── YourProject.Application.Tests/
+    └── YourProject.API.Tests/
+```
+
+---
+
+## 🏗 Architecture Overview
+
+### 🧩 Domain Layer
+The heart of your business rules. Contains:
+
+- Entities & Aggregate Roots  
+- Value Objects  
+- Domain Events  
+- Domain exceptions  
+- Business rules  
+
+No dependencies on other layers.
+
+---
+
+### ⚙️ Application Layer
+Implements the **use cases** of your system using:
+
+- Commands & Queries  
+- Command / Query Handlers  
+- Validation Behavior  
+- Logging Behavior  
+- Application Services  
+- DTO models  
+
+Depends only on the **Domain** layer.
+
+---
+
+### 🏛 Infrastructure Layer
+Implements:
+
+- EF Core Persistence  
+- Repository & Unit of Work  
+- Domain Event Dispatcher  
+- External integrations  
+
+Depends on **Application** & **Domain**.
+
+---
+
+### 🌐 API Layer
+Clean ASP.NET Core Web API using:
+
+- Middlewares  
+- Filters  
+- Modular controllers  
+- Dependency injection setup  
+- Exception handling  
+
+---
+
+## 📦 Getting Started
+
+### 1. Clone the repository
+```
+git clone https://github.com/YourUsername/YourProject-DDD-Template.git
+```
+
+### 2. Restore dependencies
+```
+dotnet restore
+```
+
+### 3. Apply migrations
+```
+cd src/YourProject.Infrastructure
+dotnet ef database update
+```
+
+### 4. Run the API
+```
+cd ../YourProject.API
+dotnet run
+```
+
+---
+
+## 🧪 Testing
+
+```
+dotnet test
+```
+
+Supports:
+
+- Domain unit tests  
+- Application use-case tests  
+- API integration tests  
+
+---
+
+## 🤝 Contribution Guidelines
+
+Contributions are welcome!
+
+- Open an Issue  
+- Submit a Pull Request  
+- Follow existing folder structure  
+- Ensure all unit tests pass  
+
+---
+
+## 📄 License
+
+Released under the **MIT License**.
+
+---
+
+## ⭐ Support the Project
+
+If this DDD template helped you:
+
+- ⭐ Star the repository on GitHub  
+- Share it with others  
+- Contribute improvements  
