@@ -11,3 +11,16 @@
 /home/aliz/DDD_Template/DDD.Domain/obj/Debug/net9.0/refint/DDD.Domain.dll
 /home/aliz/DDD_Template/DDD.Domain/obj/Debug/net9.0/DDD.Domain.pdb
 /home/aliz/DDD_Template/DDD.Domain/obj/Debug/net9.0/ref/DDD.Domain.dll
+F:\project\DDD_Template\DDD.Domain\obj\Debug\net9.0\DDD.Domain.csproj.AssemblyReference.cache
+F:\project\DDD_Template\DDD.Domain\obj\Debug\net9.0\DDD.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\project\DDD_Template\DDD.Domain\obj\Debug\net9.0\DDD.Domain.AssemblyInfoInputs.cache
+F:\project\DDD_Template\DDD.Domain\obj\Debug\net9.0\DDD.Domain.AssemblyInfo.cs
+F:\project\DDD_Template\DDD.Domain\obj\Debug\net9.0\DDD.Domain.csproj.CoreCompileInputs.cache
+F:\project\DDD_Template\DDD.Domain\obj\Debug\net9.0\DDD.Domain.sourcelink.json
+F:\project\DDD_Template\DDD.Domain\obj\Debug\net9.0\DDD.Domain.dll
+F:\project\DDD_Template\DDD.Domain\obj\Debug\net9.0\refint\DDD.Domain.dll
+F:\project\DDD_Template\DDD.Domain\obj\Debug\net9.0\DDD.Domain.pdb
+F:\project\DDD_Template\DDD.Domain\bin\Debug\net9.0\DDD.Domain.deps.json
+F:\project\DDD_Template\DDD.Domain\bin\Debug\net9.0\DDD.Domain.dll
+F:\project\DDD_Template\DDD.Domain\bin\Debug\net9.0\DDD.Domain.pdb
+F:\project\DDD_Template\DDD.Domain\obj\Debug\net9.0\ref\DDD.Domain.dll

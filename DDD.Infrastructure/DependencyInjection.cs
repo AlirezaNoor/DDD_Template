@@ -1,5 +1,6 @@
 using DDD.Domain.Interfaces;
 using DDD.Infrastructure.Authentication;
+using DDD.Infrastructure.Messaging;
 using DDD.Infrastructure.Persistence;
 using DDD.Infrastructure.Persistence.Interceptors;
 using DDD.Infrastructure.Services;
@@ -15,6 +16,9 @@ public static class DependencyInjection
     {
         services.AddScoped<AuditableEntityInterceptor>();
         services.AddScoped<DomainEventDispatcher>();
+        services.AddSingleton<IIntegrationEventMapper, DefaultIntegrationEventMapper>();
+        services.AddSingleton<IMessageBroker, LoggingMessageBroker>();
+        services.AddHostedService<OutboxBackgroundService>();
 
         services.AddDbContext<ApplicationDbContext>((sp, options) =>
         {

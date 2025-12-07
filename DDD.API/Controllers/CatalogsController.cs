@@ -43,4 +43,40 @@ public class CatalogsController : ControllerBase
 
         return Ok(result.Value);
     }
+
+    [HttpPut("{id:guid}")]
+    [Authorize]
+    public async Task<IActionResult> Update(Guid id, [FromBody] UpdateCatalogDetailsCommand body)
+    {
+        if (id != body.Id)
+        {
+            return BadRequest("Route id and body id mismatch");
+        }
+
+        var result = await _sender.Send(body);
+        if (result.IsFailure)
+        {
+            return NotFound(result.Error);
+        }
+
+        return NoContent();
+    }
+
+    [HttpPost("{id:guid}/items")]
+    [Authorize]
+    public async Task<IActionResult> AddItem(Guid id, [FromBody] AddCatalogItemCommand body)
+    {
+        if (id != body.CatalogId)
+        {
+            return BadRequest("Route id and body id mismatch");
+        }
+
+        var result = await _sender.Send(body);
+        if (result.IsFailure)
+        {
+            return NotFound(result.Error);
+        }
+
+        return Created($"api/catalogs/{id}/items/{result.Value}", result.Value);
+    }
 }

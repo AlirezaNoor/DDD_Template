@@ -23,7 +23,9 @@ public class Catalog : AggregateRoot<CatalogId>
         if (string.IsNullOrWhiteSpace(name))
             throw new ArgumentException("Name cannot be empty", nameof(name));
 
-        return new Catalog(CatalogId.New(), name, description);
+        var catalog = new Catalog(CatalogId.New(), name, description);
+        catalog.AddDomainEvent(new DDD.Domain.Events.CatalogCreatedEvent(catalog.Id, catalog.Name));
+        return catalog;
     }
 
     public void UpdateDetails(string name, string description)
@@ -31,8 +33,13 @@ public class Catalog : AggregateRoot<CatalogId>
         if (string.IsNullOrWhiteSpace(name))
             throw new ArgumentException("Name cannot be empty", nameof(name));
 
+        var oldName = Name;
+        var oldDescription = Description;
+
         Name = name;
         Description = description;
+
+        AddDomainEvent(new DDD.Domain.Events.CatalogDetailsUpdatedEvent(Id, oldName, oldDescription, Name, Description));
     }
 
     public void AddItem(string name, decimal priceAmount, string currency)
@@ -40,5 +47,6 @@ public class Catalog : AggregateRoot<CatalogId>
         var price = Price.Create(priceAmount, currency);
         var item = new CatalogItem(CatalogItemId.New(), Id, name, price);
         _items.Add(item);
+        AddDomainEvent(new DDD.Domain.Events.CatalogItemAddedEvent(Id, item.Id, item.Name, item.Price.Amount, item.Price.Currency));
     }
 }
